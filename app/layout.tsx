@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navigation from "./UIComponents/Navigation";
-import Footer from "./UIComponents/Footer";
+// import Footer from "./UIComponents/Footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -30,7 +30,7 @@ export default function RootLayout({
       >
         <Navigation />
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

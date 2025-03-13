@@ -24,7 +24,7 @@ export default function EmptyCart() {
           </svg>
           <h2 className="text-2xl font-bold mb-4">Your cart is empty</h2>
           <p className="text-gray-600 mb-8">
-            Looks like you haven't added any coffee to your cart yet.
+            Looks like you haven&apos;t added any coffee to your cart yet.
           </p>
           <Link
             href="/shop"

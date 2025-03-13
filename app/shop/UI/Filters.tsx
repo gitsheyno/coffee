@@ -46,10 +46,8 @@ export default function Filters() {
     searchParams.get("roastLevel") || "All Roast Levels"
   );
 
-  // Update URL with new search params
   const updateSearchParams = (params: Record<string, string>) => {
     const newSearchParams = new URLSearchParams(searchParams.toString());
-
     Object.entries(params).forEach(([key, value]) => {
       if (value) {
         newSearchParams.set(key, value);
@@ -61,14 +59,12 @@ export default function Filters() {
     router.push(`${pathname}?${newSearchParams.toString()}`);
   };
 
-  // Handle search term change
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearchTerm(value);
     updateSearchParams({ search: value });
   };
 
-  // Handle category change
   const handleCategoryChange = (category: string) => {
     setActiveCategory(category);
     updateSearchParams({ category: category === "all" ? "" : category });

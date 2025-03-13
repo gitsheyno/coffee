@@ -1,10 +1,8 @@
-// src/components/shop/ProductCard.tsx
 "use client";
 import React from "react";
 import Image from "next/image";
 import { Product } from "../../shop/types/index";
 import { useCart } from "../../ShopingCartContext";
-import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 import Link from "next/link";
 
@@ -14,7 +12,6 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   const { addToCart } = useCart();
-  const router = useRouter();
 
   const handleAddToCart = () => {
     console.log("Add to cart:", product);
@@ -22,52 +19,57 @@ export default function ProductCard({ product }: ProductCardProps) {
     toast.success(`${product.name} added to cart!`);
   };
 
-  const handleBuyNow = () => {
-    addToCart(product);
-    router.push("/cart");
-  };
-
   return (
-    <div className="group bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition duration-300">
-      <div className="relative h-64 overflow-hidden">
+    <div className="group bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-md transition-all duration-300 max-w-xs">
+      {/* Product Image Container - more compact */}
+      <div className="relative h-52 overflow-hidden">
         <div className="w-full h-full relative">
           <Image
             src={product.image}
             alt={product.name}
             layout="fill"
             objectFit="cover"
-            className="transform group-hover:scale-105 transition duration-500"
+            className="transform group-hover:scale-105 transition-transform duration-500"
           />
         </div>
-        <div className="absolute top-3 right-3 bg-white text-gray-800 px-3 py-1 text-sm font-medium rounded-full shadow-sm">
+        {/* Smaller category badge */}
+        <div className="absolute top-2 right-2 bg-white/90 text-gray-800 px-2 py-0.5 text-xs font-medium rounded-full shadow-sm">
           {product.category}
         </div>
       </div>
-      <div className="p-5">
-        <div className="flex justify-between items-start mb-2">
+
+      {/* Product Details with tighter spacing */}
+      <div className="p-4">
+        <div className="flex justify-between items-start mb-1">
           <div>
-            <h3 className="text-lg font-semibold">{product.name}</h3>
-            <p className="text-sm text-gray-500 flex items-center gap-1">
+            <h3 className="text-base font-medium text-gray-900 group-hover:text-amber-700 transition-colors duration-300">
+              {product.name}
+            </h3>
+            <p className="text-xs text-gray-500 flex items-center gap-1 mt-0.5">
               <span>{product.region}</span>
               <span className="text-gray-300">•</span>
               <span>{product.roastLevel}</span>
             </p>
           </div>
-          <span className="text-lg font-semibold text-amber-700">
+          <span className="text-base font-medium text-amber-700">
             ${product.price.toFixed(2)}
           </span>
         </div>
-        <p className="text-gray-600 mt-2 text-sm line-clamp-2">
+
+        {/* Shorter description */}
+        {/* <p className="text-gray-600 mt-1.5 text-xs line-clamp-2">
           {product.description}
-        </p>
-        <div className="mt-4 flex space-x-2">
+        </p> */}
+
+        {/* More compact action buttons */}
+        <div className="mt-3 flex space-x-2">
           <button
             onClick={handleAddToCart}
-            className="flex-1 py-2 bg-amber-700 text-white rounded-md hover:bg-amber-800 transition duration-300 flex items-center justify-center gap-1"
+            className="flex-1 py-1.5 bg-amber-700 text-white text-sm rounded-md hover:bg-amber-800 transition duration-300 flex items-center justify-center gap-1"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4"
+              className="h-3.5 w-3.5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -83,11 +85,11 @@ export default function ProductCard({ product }: ProductCardProps) {
           </button>
           <Link
             href="/cart"
-            className="p-2 border border-gray-300 rounded-md hover:bg-gray-100 transition duration-300"
+            className="p-1.5 border border-gray-200 rounded-md hover:bg-gray-50 transition duration-300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-gray-500"
+              className="h-4 w-4 text-gray-500 group-hover:text-amber-600"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

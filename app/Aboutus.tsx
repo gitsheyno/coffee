@@ -3,9 +3,7 @@ import TimelineSlider from "./TimeLineSlider";
 // pages/about.tsx
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import { FC } from "react";
-import { usePathname } from "next/navigation";
 // Team member type
 interface TeamMember {
   id: number;
@@ -13,14 +11,6 @@ interface TeamMember {
   role: string;
   bio: string;
   image: string;
-}
-
-// Timeline event type
-interface TimelineEvent {
-  id: number;
-  year: string;
-  title: string;
-  description: string;
 }
 
 const About: FC = () => {
@@ -83,9 +73,9 @@ const About: FC = () => {
             Our Story
           </h1>
           <p className="mt-6 max-w-2xl text-xl text-gray-300">
-            From a simple cart at the local farmers' market to a global coffee
-            brand, our journey has been guided by one principle: exceptional
-            coffee, ethically sourced.
+            From a simple cart at the local farmers&apos; market to a global
+            coffee brand, our journey has been guided by one principle:
+            exceptional coffee, ethically sourced.
           </p>
         </div>
       </div>
@@ -97,8 +87,8 @@ const About: FC = () => {
           <div className="mt-8 max-w-3xl mx-auto">
             <p className="text-xl text-gray-600 leading-relaxed">
               At Aromatic Blends, we believe that exceptional coffee is a
-              journey from seed to cup. We're committed to sourcing the finest
-              beans through ethical practices, expertly roasting in small
+              journey from seed to cup. We&apos;re committed to sourcing the
+              finest beans through ethical practices, expertly roasting in small
               batches to preserve unique flavor profiles, and educating our
               community to appreciate the art and science of coffee.
             </p>

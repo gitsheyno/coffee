@@ -1,9 +1,13 @@
-// import Shop from "../Shopping";
 import Shop from "./UI/Shop";
-export default function ShopPage() {
+import { getProducts } from "../data/queries";
+import { Suspense } from "react";
+export default async function ShopPage() {
+  const products = await getProducts();
   return (
     <div>
-      <Shop />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Shop fetchedProducts={products} />
+      </Suspense>
     </div>
   );
 }

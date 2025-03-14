@@ -7,15 +7,9 @@ import ProductSorter from "./ProductSorter";
 
 interface ProductListProps {
   products: Product[];
-  sortOption: string;
-  onSortChange: (option: string) => void;
 }
 
-export default function ProductList({
-  products,
-  sortOption,
-  onSortChange,
-}: ProductListProps) {
+export default function ProductList({ products }: ProductListProps) {
   return (
     <div>
       <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-4 mb-6 flex flex-col sm:flex-row justify-between items-center gap-4">
@@ -23,7 +17,7 @@ export default function ProductList({
           Showing {products.length}{" "}
           {products.length === 1 ? "product" : "products"}
         </p>
-        <ProductSorter value={sortOption} onChange={onSortChange} />
+        <ProductSorter />
       </div>
 
       {products.length === 0 ? (

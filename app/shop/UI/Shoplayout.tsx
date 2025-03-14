@@ -17,7 +17,7 @@ export default function ShopLayout({ children }: ShopLayoutProps) {
   };
 
   return (
-    <div className="min-h-screen bg-white text-gray-800">
+    <div className="min-h-screen  bg-white text-gray-800">
       <Head>
         <title>Shop Coffee | The Barn Coffee Roasters</title>
         <meta

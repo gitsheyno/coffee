@@ -1,4 +1,8 @@
 import React from "react";
 export default function page() {
-  return <h1>Checkout</h1>;
+  return (
+    <div className="mt-4 flex">
+      <h1 className="mx-auto">Under Development</h1>
+    </div>
+  );
 }

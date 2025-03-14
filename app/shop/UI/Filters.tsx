@@ -1,7 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-
+import RegionSelect from "./RegionSelect";
+import RoastLevelSelect from "./RoastLevelSelect";
 // Define categories and filters
 const categories = [
   { id: "all", name: "All Coffee" },
@@ -71,15 +72,13 @@ export default function Filters() {
   };
 
   // Handle region change
-  const handleRegionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const value = e.target.value;
+  const handleRegionChange = (value: string) => {
     setSelectedRegion(value);
     updateSearchParams({ region: value === "All Regions" ? "" : value });
   };
 
   // Handle roast level change
-  const handleRoastLevelChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const value = e.target.value;
+  const handleRoastLevelChange = (value: string) => {
     setSelectedRoastLevel(value);
     updateSearchParams({
       roastLevel: value === "All Roast Levels" ? "" : value,
@@ -153,37 +152,19 @@ export default function Filters() {
         </h3>
 
         <div className="mb-6">
-          <label className="block text-sm font-medium mb-2 text-gray-700">
-            Region
-          </label>
-          <select
-            className="w-full p-3 rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-            value={selectedRegion}
-            onChange={handleRegionChange}
-          >
-            {regions.map((region) => (
-              <option key={region} value={region}>
-                {region}
-              </option>
-            ))}
-          </select>
+          <RegionSelect
+            regions={regions}
+            selectedRegion={selectedRegion}
+            handleRegionChange={handleRegionChange}
+          />
         </div>
 
         <div className="mb-6">
-          <label className="block text-sm font-medium mb-2 text-gray-700">
-            Roast Level
-          </label>
-          <select
-            className="w-full p-3 rounded-md bg-gray-50 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-            value={selectedRoastLevel}
-            onChange={handleRoastLevelChange}
-          >
-            {roastLevels.map((level) => (
-              <option key={level} value={level}>
-                {level}
-              </option>
-            ))}
-          </select>
+          <RoastLevelSelect
+            roastLevels={roastLevels}
+            selectedRoastLevel={selectedRoastLevel}
+            handleRoastLevelChange={handleRoastLevelChange}
+          />
         </div>
       </div>
 

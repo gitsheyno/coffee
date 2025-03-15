@@ -8,7 +8,7 @@ type Product = {
   image: string;
   category: string;
   region: string;
-  roastLevel: string;
+  roastLevel?: string;
 };
 
 type Filters = {

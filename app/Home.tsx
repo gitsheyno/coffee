@@ -1,10 +1,7 @@
-"use client";
-// pages/index.tsx
 import Head from "next/head";
 import Image from "next/image";
-import { FC, useState } from "react";
+import { FC } from "react";
 
-// Types for our coffee products
 interface CoffeeProduct {
   id: number;
   name: string;
@@ -14,7 +11,6 @@ interface CoffeeProduct {
 }
 
 const Home: FC = () => {
-  // Featured coffee products
   const featuredCoffees: CoffeeProduct[] = [
     {
       id: 1,
@@ -148,9 +144,9 @@ const Home: FC = () => {
               </h2>
               <p className="mt-4 text-lg text-gray-600">
                 Aromatic Blends was founded in 2010 with a simple mission: to
-                bring the world's finest coffee to your cup. We travel to remote
-                coffee-growing regions, form direct relationships with farmers,
-                and carefully select only the best beans.
+                bring the world&apos;s finest coffee to your cup. We travel to
+                remote coffee-growing regions, form direct relationships with
+                farmers, and carefully select only the best beans.
               </p>
               <p className="mt-4 text-lg text-gray-600">
                 Each batch is roasted to perfection in our small-batch roastery,
@@ -232,9 +228,9 @@ const Home: FC = () => {
               </div>
             </div>
             <p className="text-gray-600">
-              "The Ethiopian Yirgacheffe from Aromatic Blends has transformed my
-              mornings. The fruity notes are incredible, and knowing it's
-              ethically sourced makes it even better."
+              &quot;The Ethiopian Yirgacheffe from Aromatic Blends has
+              transformed my mornings. The fruity notes are incredible, and
+              knowing it&apos;s ethically sourced makes it even better.&quot;
             </p>
           </div>
 
@@ -285,9 +281,9 @@ const Home: FC = () => {
               </div>
             </div>
             <p className="text-gray-600">
-              "I've tried many coffee subscription services, but Aromatic Blends
-              consistently delivers the freshest, most flavorful beans. Their
-              customer service is also exceptional."
+              &quot;I&apos;ve tried many coffee subscription services, but
+              Aromatic Blends consistently delivers the freshest, most flavorful
+              beans. Their customer service is also exceptional.&quot;
             </p>
           </div>
 
@@ -338,9 +334,10 @@ const Home: FC = () => {
               </div>
             </div>
             <p className="text-gray-600">
-              "As a coffee shop owner, I've been sourcing from Aromatic Blends
-              for three years. Their consistency and quality control are
-              unmatched, and my customers can taste the difference."
+              &quot;As a coffee shop owner, I&lsquo;ve been sourcing from
+              Aromatic Blends for three years. Their consistency and quality
+              control are unmatched, and my customers can taste the
+              difference.&quot;
             </p>
           </div>
         </div>

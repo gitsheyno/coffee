@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const TimelineSlider = () => {
-  // Sample timeline events - replace with your actual data
   const timelineEvents = [
     {
       id: 1,
@@ -65,19 +64,18 @@ const TimelineSlider = () => {
     setTimeout(() => setIsAnimating(false), 500);
   };
 
-  const goToSlide = (index) => {
+  const goToSlide = (index: number) => {
     if (isAnimating) return;
     setIsAnimating(true);
     setCurrentSlide(index);
     setTimeout(() => setIsAnimating(false), 500);
   };
 
-  // Touch handlers for mobile swipe
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
   };
 
-  const handleTouchMove = (e) => {
+  const handleTouchMove = (e: React.TouchEvent) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
@@ -91,7 +89,6 @@ const TimelineSlider = () => {
     }
   };
 
-  // Auto-advance the slider
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
@@ -105,7 +102,7 @@ const TimelineSlider = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-extrabold text-gray-900">Our Journey</h2>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-            How we've grown while staying true to our values.
+            How we&apos;ve grown while staying true to our values.
           </p>
         </div>
 

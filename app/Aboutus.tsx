@@ -133,9 +133,9 @@ const About: FC = () => {
                 Sustainability
               </h3>
               <p className="text-gray-600 text-center">
-                We're committed to environmentally responsible practices across
-                our business, from supporting sustainable farming to minimizing
-                our carbon footprint with eco-friendly packaging.
+                We&apos;re committed to environmentally responsible practices
+                across our business, from supporting sustainable farming to
+                minimizing our carbon footprint with eco-friendly packaging.
               </p>
             </div>
 
@@ -254,7 +254,8 @@ const About: FC = () => {
             Our Certifications
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-            We're proud to meet the highest standards in the coffee industry.
+            We&apos;re proud to meet the highest standards in the coffee
+            industry.
           </p>
         </div>
 

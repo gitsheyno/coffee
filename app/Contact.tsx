@@ -1,6 +1,5 @@
 "use client";
 
-// pages/contact.tsx
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,7 +7,6 @@ import { FC, useState, FormEvent } from "react";
 import InteractiveMap from "./Interactivemap";
 
 const Contact: FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -47,7 +45,7 @@ const Contact: FC = () => {
         subject: "",
         message: "",
       });
-    } catch (error) {
+    } catch {
       setSubmitError(
         "There was an error submitting your form. Please try again."
       );
@@ -87,8 +85,8 @@ const Contact: FC = () => {
             Get In Touch
           </h1>
           <p className="mt-6 max-w-2xl text-xl text-gray-300">
-            We'd love to hear from you. Send us a message and we'll respond as
-            soon as possible.
+            We&apos;d love to hear from you. Send us a message and we&apos;ll
+            respond as soon as possible.
           </p>
         </div>
       </div>
@@ -260,8 +258,8 @@ const Contact: FC = () => {
                     Message Sent!
                   </h3>
                   <p className="text-green-700">
-                    Thank you for reaching out. We'll get back to you as soon as
-                    possible.
+                    Thank you for reaching out. We&apos;ll get back to you as
+                    soon as possible.
                   </p>
                   <button
                     onClick={() => setSubmitSuccess(false)}
@@ -409,8 +407,8 @@ const Contact: FC = () => {
               Frequently Asked Questions
             </h2>
             <p className="mt-4 text-xl text-gray-500">
-              Can't find the answer you're looking for? Reach out to our
-              customer support team.
+              Can&apos;t find the answer you&apos;re looking for? Reach out to
+              our customer support team.
             </p>
           </div>
 
@@ -443,8 +441,8 @@ const Contact: FC = () => {
               </h3>
               <p className="text-gray-600">
                 Yes, we provide wholesale options for cafés, restaurants, and
-                offices. Please use our contact form and select "Wholesale
-                Inquiry" to learn more.
+                offices. Please use our contact form and select &quot;Wholesale
+                Inquiry&quot; to learn more.
               </p>
             </div>
 

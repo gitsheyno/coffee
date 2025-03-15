@@ -14,7 +14,7 @@ export default function ProductList({ products }: ProductListProps) {
     <div>
       <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-4 mb-6 flex flex-col sm:flex-row justify-between items-center gap-4">
         <p className="text-gray-600 font-medium">
-          Showing {products.length}{" "}
+          Showing {products.length}
           {products.length === 1 ? "product" : "products"}
         </p>
         <ProductSorter />
@@ -50,7 +50,7 @@ export default function ProductList({ products }: ProductListProps) {
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[800px] overflow-y-auto pr-2">
+        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[650px] overflow-y-auto pr-2">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

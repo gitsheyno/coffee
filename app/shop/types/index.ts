@@ -6,5 +6,5 @@ export interface Product {
   image: string;
   category: string;
   region: string;
-  roastLevel: string;
+  roastLevel?: string;
 }

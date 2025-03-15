@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import SideMenu from "./SideMenu";
 import Filters from "./Filters";
 import Head from "next/head";
-
+import { Suspense } from "react";
 interface ShopLayoutProps {
   children: React.ReactNode;
 }
@@ -11,7 +11,6 @@ interface ShopLayoutProps {
 export default function ShopLayout({ children }: ShopLayoutProps) {
   const [showFilters, setShowFilters] = useState(false);
 
-  // Toggle filters visibility for mobile
   const toggleFilters = () => {
     setShowFilters(!showFilters);
   };
@@ -28,7 +27,7 @@ export default function ShopLayout({ children }: ShopLayoutProps) {
       </Head>
 
       <main>
-        <section className="py-12 px-4">
+        <section className="py-4 px-4">
           <div className="container mx-auto">
             {/* Mobile Filter Toggle */}
             <div className="lg:hidden mb-6">
@@ -53,19 +52,19 @@ export default function ShopLayout({ children }: ShopLayoutProps) {
             </div>
 
             <div className="flex flex-col lg:flex-row gap-8">
-              {/* Sidebar with Filters */}
               <div
                 className={`lg:w-1/4 ${
                   showFilters ? "block" : "hidden lg:block"
                 }`}
               >
                 <SideMenu>
-                  <Filters />
+                  <Suspense>
+                    <Filters />
+                  </Suspense>
                 </SideMenu>
               </div>
 
-              {/* Main Content Area for Products */}
-              <div className="lg:w-3/4">{children}</div>
+              <div className="lg:w-3/4 ">{children}</div>
             </div>
           </div>
         </section>

@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import ProductsWrapper from "./UI/ProductsWrapper";
 export default async function ShopPage() {
   return (
-    <div>
+    <div className="">
       <Suspense fallback={<Spinner />}>
         <ProductsWrapper />
       </Suspense>

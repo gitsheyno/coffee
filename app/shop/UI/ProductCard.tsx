@@ -30,7 +30,8 @@ export default function ProductCard({ product }: ProductCardProps) {
           <Image
             src={product.image}
             alt={product.name}
-            fill
+            width={400}
+            height={200}
             priority={true}
             style={{ objectFit: "cover" }}
             className="transform group-hover:scale-105 transition-transform duration-500"

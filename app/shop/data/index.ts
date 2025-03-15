@@ -120,15 +120,4 @@ export const allProducts = [
     region: "Africa",
     roastLevel: "Light",
   },
-  // {
-  //   id: 12,
-  //   name: "Mexico Chiapas",
-  //   description: "Sweet with notes of chocolate, nuts and a hint of spice",
-  //   price: 13.5,
-  //   image:
-  //     "https://images.unsplash.com/photo-1503249023995-51fe47424c12?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-  //   category: "Espresso",
-  //   region: "Central America",
-  //   roastLevel: "Medium-Dark",
-  // },
 ];

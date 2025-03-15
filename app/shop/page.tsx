@@ -1,12 +1,11 @@
-import Shop from "./UI/Shop";
-import { getProducts } from "../data/queries";
+import Spinner from "@/app/UIComponents/Loader";
 import { Suspense } from "react";
+import ProductsWrapper from "./UI/ProductsWrapper";
 export default async function ShopPage() {
-  const products = await getProducts();
   return (
     <div>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Shop fetchedProducts={products} />
+      <Suspense fallback={<Spinner />}>
+        <ProductsWrapper />
       </Suspense>
     </div>
   );

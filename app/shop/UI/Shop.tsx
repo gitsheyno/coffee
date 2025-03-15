@@ -17,20 +17,21 @@ export default function ShopPage({
   }[];
 }) {
   const searchParams = useSearchParams();
+  console.log(fetchedProducts);
+  // const category = searchParams.get("category") || "all";
+  // const region = searchParams.get("region") || "all";
+  // const roastLevel = searchParams.get("roastLevel") || "all";
+  // const searchedValue = searchParams.get("search") || "";
+  // const sortOption = searchParams.get("sort") || "featured";
 
-  const category = searchParams.get("category") || "all";
-  const region = searchParams.get("region") || "all";
-  const roastLevel = searchParams.get("roastLevel") || "all";
-  const searchedValue = searchParams.get("search") || "";
-  const sortOption = searchParams.get("sort") || "featured";
+  // console.log("fetchedProducts", fetchedProducts);
+  // const filteredProducts = useFilter(fetchedProducts, {
+  //   category,
+  //   region,
+  //   roastLevel,
+  //   searchedValue,
+  //   sortOption,
+  // });
 
-  const filteredProducts = useFilter(fetchedProducts, {
-    category,
-    region,
-    roastLevel,
-    searchedValue,
-    sortOption,
-  });
-
-  return <ProductList products={filteredProducts} />;
+  return <ProductList products={fetchedProducts} />;
 }
